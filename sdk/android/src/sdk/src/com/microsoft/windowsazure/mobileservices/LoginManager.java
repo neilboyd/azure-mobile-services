@@ -262,6 +262,10 @@ class LoginManager {
 			throw new IllegalArgumentException("context can not be null");
 		}
 
+		if (!(context instanceof Activity)) {
+			throw new IllegalArgumentException("context must be an Activity");
+		}
+
 		final LoginUIOperationCallback externalCallback = callback;
 		final AlertDialog.Builder builder = new AlertDialog.Builder(context);
 		// Create the Web View to show the login page
